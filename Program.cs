@@ -15,19 +15,19 @@ namespace AzureKeyVault
             // Add services to the container.
 
 
-            string keyVaultURL = builder.Configuration.GetSection("KeyVault")["KeyVaultURL"].ToString();
-            string clientId = builder.Configuration.GetSection("KeyVault")["ClientId"].ToString();
-            string clientSecret = builder.Configuration.GetSection("KeyVault")["ClientSecret"].ToString();
-            string directoryId = builder.Configuration.GetSection("KeyVault")["TenantId"].ToString();
-            var credential = new DefaultAzureCredential(new DefaultAzureCredentialOptions
-            {
-                AdditionallyAllowedTenants = { "*" }
-            });
-            var credentials= new ClientSecretCredential(directoryId, clientId, clientSecret);
-            var client = new SecretClient(new Uri(keyVaultURL), credentials);
+            //string keyVaultURL = builder.Configuration.GetSection("KeyVault")["KeyVaultURL"].ToString();
+            //string clientId = builder.Configuration.GetSection("KeyVault")["ClientId"].ToString();
+            //string clientSecret = builder.Configuration.GetSection("KeyVault")["ClientSecret"].ToString();
+            //string directoryId = builder.Configuration.GetSection("KeyVault")["TenantId"].ToString();
+            //var credential = new DefaultAzureCredential(new DefaultAzureCredentialOptions
+            //{
+            //    AdditionallyAllowedTenants = { "*" }
+            //});
+            //var credentials= new ClientSecretCredential(directoryId, clientId, clientSecret);
+            //var client = new SecretClient(new Uri(keyVaultURL), credentials);
 
-            builder.Configuration.AddAzureKeyVault(client,new AzureKeyVaultConfigurationOptions());
-            var str=client.GetSecret("ConnectionString").Value.Value.ToString();
+            //builder.Configuration.AddAzureKeyVault(client,new AzureKeyVaultConfigurationOptions());
+            //var str=client.GetSecret("ConnectionString").Value.Value.ToString();
           
 
             
